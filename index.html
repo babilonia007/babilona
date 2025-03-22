@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ffffff; /* Fondo blanco */
+            color: #333; /* Texto oscuro para mejor contraste */
+        }
+        .product-container {
+            max-width: 600px; /* Reducir el tamaño del carrusel */
+            margin: 20px auto;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: #fff; /* Fondo blanco */
+        }
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .gallery-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item {
+            position: relative;
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .whatsapp-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            background-color: rgba(37, 211, 102, 0.7); /* Fondo verde con transparencia */
+            border-radius: 10px;
+            text-decoration: none;
+            transition: 0.3s;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            backdrop-filter: blur(10px);
+            width: 70%; /* Ajustar el ancho según el contenedor */
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: center; /* Centrar el texto dentro del botón */
+        }
+        .whatsapp-link:hover {
+            background-color: rgba(37, 211, 102, 0.9);
+            color: #fff;
+        }
+        .whatsapp-link:active {
+            animation: animateButton 0.2s forwards;
+        }
+        @keyframes animateButton {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+            50% {
+                transform: translateX(-50%) scale(0.9);
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 50%; /* Hacer los botones circulares */
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+            user-select: none;
+            z-index: 1;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Primer carrusel de productos -->
+    <div class="product-container">
+        <div id="carouselCargador" class="carousel">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/z1ICyfr.webp" alt="Producto 1" class="product-image">
+                    <a href="#" class="whatsapp-link" data-product-name="Cargador con 3 Entradas" data-product-link="https://i.imgur.com/a6e8YlR.jpeg">Obtener Producto</a>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/a6e8YlR.webp" alt="Producto 2" class="product-image">
+                    <a href="#" class="whatsapp-link" data-product-name="Cargador con 3 Entradas" data-product-link="https://i.imgur.com/a6e8YlR.jpeg">Obtener Producto</a>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/y8SQLTR.webp" alt="Producto 3" class="product-image">
+                    <a href="#" class="whatsapp-link" data-product-name="Cargador con 3 Entradas" data-product-link="https://i.imgur.com/a6e8YlR.jpeg">Obtener Producto</a>
+                </div>
+            </div>
+            <a class="prev" onclick="moveCarousel(-1, 'carouselCargador')">&#10094;</a>
+            <a class="next" onclick="moveCarousel(1, 'carouselCargador')">&#10095;</a>
+        </div>
+    </div>
+
+    <!-- Segundo carrusel de productos -->
+    <div class="product-container">
+        <div id="carouselAretes" class="carousel">
+            <div class="gallery-container">
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/ZZRu3YY.jpeg" alt="Aretes" class="product-image">
+                    <a href="#" class="whatsapp-link" data-product-name="Aretes (1500 colones)" data-product-link="https://i.imgur.com/ZZRu3YY.jpeg">Obtener Producto</a>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/r6ldllz.jpeg" alt="Aretes" class="product-image">
+                    <a href="#" class="whatsapp-link" data-product-name="Aretes (1500 colones)" data-product-link="https://i.imgur.com/ZZRu3YY.jpeg">Obtener Producto</a>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.imgur.com/7SJ260G.jpeg" alt="Aretes" class="product-image">
+                    <a href="#" class="whatsapp-link" data-product-name="Aretes (1500 colones)" data-product-link="https://i.imgur.com/ZZRu3YY.jpeg">Obtener Producto</a>
+                </div>
+            </div>
+            <a class="prev" onclick="moveCarousel(-1, 'carouselAretes')">&#10094;</a>
+            <a class="next" onclick="moveCarousel(1, 'carouselAretes')">&#10095;</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const whatsappLinks = document.querySelectorAll(".whatsapp-link");
+
+            whatsappLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+                    const productName = this.getAttribute("data-product-name");
+                    const productLink = this.getAttribute("data-product-link");
+                    const whatsappNumber = "50686677029";
+                    let message = `¡Hola! Quiero este producto: ${productName}. Aquí está el enlace: ${productLink}`;
+
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappUrl, "_blank");
+
+                    // Añadir clase de animación
+                    this.classList.add('animate');
+                    setTimeout(() => this.classList.remove('animate'), 500);
+                });
+            });
+
+            // Restaurar estado del carrusel
+            document.querySelectorAll('.carousel').forEach(carousel => {
+                const items = carousel.querySelectorAll('.gallery-item');
+                const carouselId = carousel.id;
+                const savedIndex = localStorage.getItem(`carousel-${carouselId}`) ? parseInt(localStorage.getItem(`carousel-${carouselId}`)) : 0; // Cambio realizado aquí
+                items.forEach((item, index) => {
+                    item.style.display = index == savedIndex ? "block" : "none";
+                });
+            });
+
+            function saveCarouselState(carouselId, currentIndex) {
+                localStorage.setItem(`carousel-${carouselId}`, currentIndex);
+            }
+
+            window.moveCarousel = function(step, carouselId) {
+                const carousel = document.getElementById(carouselId);
+                const items = carousel.querySelectorAll('.gallery-item');
+                const totalItems = Math.min(items.length, 3); // Limitar a las primeras 3 imágenes
+                let currentIndex = 0;
+
+                items.forEach((item, index) => {
+                    if (item.style.display !== "none") {
+                        currentIndex = index;
+                        item.style.display = "none";
+                    }
+                });
+
+                let newIndex = currentIndex + step;
+                if (newIndex >= totalItems) {
+                    newIndex = 0; // Volver al inicio
+                } else if (newIndex < 0) {
+                    newIndex = totalItems - 1; // Ir al final
+                }
+
+                items[newIndex].style.display = "block";
+
+                // Guardar estado del carrusel
+                saveCarouselState(carouselId, newIndex);
+
+                // Deshabilitar botones si es necesario
+                const prevButton = document.querySelector(`#${carouselId} .prev`);
+                const nextButton = document.querySelector(`#${carouselId} .next`);
+                prevButton.style.display = newIndex === 0 ? 'none' : 'block';
+                nextButton.style.display = newIndex === totalItems - 1 ? 'none' : 'block';
+            };
+
+            // Inicializar botones de navegación
+            document.querySelectorAll('.carousel').forEach(carousel => {
+                const carouselId = carousel.id;
+                const savedIndex = localStorage.getItem(`carousel-${carouselId}`) ? parseInt(localStorage.getItem(`carousel-${carouselId}`)) : 0; // Cambio realizado aquí
+                const items = carousel.querySelectorAll('.gallery-item');
+                const totalItems = Math.min(items.length, 3);
+
+                const prevButton = document.querySelector(`#${carouselId} .prev`);
+                const nextButton = document.querySelector(`#${carouselId} .next`);
+                prevButton.style.display = savedIndex === 0 ? 'none' : 'block';
+                nextButton.style.display = savedIndex === totalItems - 1 ? 'none' : 'block';
+            });
+        });
+    </script>
+</body>
+  </html>
